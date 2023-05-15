@@ -6,8 +6,6 @@ class Program
     static void Main(string[] args)
     {
         string inputImageDataFile, kernelDataFile, outputImageDataFile;
-
-        // Step 1: Get file addresses from the user
         Console.Write("Enter the address of the input image data file: ");
         inputImageDataFile = Console.ReadLine();
 
@@ -17,16 +15,12 @@ class Program
         Console.Write("Enter the address of the output image data file: ");
         outputImageDataFile = Console.ReadLine();
 
-        // Step 2: Read input image data from file
         double[,] inputImageData = ReadImageDataFromFile(inputImageDataFile);
 
-        // Step 3: Read convolution kernel data from file
         double[,] kernelData = ReadImageDataFromFile(kernelDataFile);
 
-        // Step 4: Convolve input image data with the convolution kernel
         double[,] outputImageData = ConvolveImage(inputImageData, kernelData);
 
-        // Step 5: Write resulting image data to file
         WriteImageDataToFile(outputImageDataFile, outputImageData);
 
         Console.WriteLine("Convolution completed successfully.");
